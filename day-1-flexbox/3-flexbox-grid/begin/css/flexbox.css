@@ -5,39 +5,102 @@ html {
 }
 /* inherit border-box on all elements in the universe and before and after
  */
-*, 
-*:before, 
+*,
+*:before,
 *:after {
   box-sizing: inherit;
 }
 
 body {
-	font-family: Arial, Geneva, sans-serif;
+  font-family: Arial, Geneva, sans-serif;
 }
 a {
-	color: #2772B0;
+  color: #2772b0;
 }
 .wrapper {
-	width: 97%;
-	max-width: 1200px;
-	margin: 0 auto;
-	float: none;
-	background-color: #fff;
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  background-color: #fff;
 }
 
 div img {
-	width: 100%;
-	max-width: 225px; 
+  width: 100%;
+  max-width: 225px;
 }
 
 /* grid system -- mobile first! */
+.row-1 {
+  display: flex;
+  flex-flow: row wrap;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.reverse [class*="col-1"] {
+  margin-left: 0;
+  margin-right: 4%;
+}
 
+[class*="col-"] {
+  margin-left: 4%;
+}
 
 /* Mobile Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
-
+@media only screen and (min-width: 480px) {
+  .col-1-2,
+  .col-2 {
+    flex: 0 0 44%;
+    background-color: pink;
+  }
+  .col-1-4,
+  .col-3,
+  .col-4 {
+    flex: 0 0 92%;
+    background-color: lightgreen;
+  }
+  .col-2-1,
+  .col-2-3 {
+    flex: 0 0 44%;
+    background: lightpink;
+  }
+  .col-2-2 {
+    flex: 0 0 92%;
+    order: -1;
+    background-color: lightskyblue;
+  }
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
+  .col-1-2,
+  .col-1-4 {
+    flex: 0 0 20%;
+    background-color: pink;
+  }
 
+  .col-2 {
+    flex: 0 0 44%;
+    background-color: aqua;
+  }
+
+  .col-3 {
+    flex: 0 0 68%;
+    background-color: lightgoldenrodyellow;
+  }
+  .col-4 {
+    flex: 0 0 92%;
+    background-color: lightgreen;
+  }
+  .col-2-1,
+  .col-2-3 {
+    flex: 0 0 21%;
+    order: 0;
+    background: lightpink;
+  }
+  .col-2-2 {
+    flex: 0 0 42%;
+    order: 0;
+    background-color: lightskyblue;
+  }
 }

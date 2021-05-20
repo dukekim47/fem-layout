@@ -62,7 +62,7 @@ nav a:hover {
 .row:before, 
 .row:after {
     content:"";
-    display: table;
+    display: flex;
     clear:both;
 }
 div.row {
